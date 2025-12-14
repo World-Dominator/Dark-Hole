@@ -1,3 +1,6 @@
+"""Darkhole prototype package."""
+
+__all__ = ["crypto", "dht", "sphinx"]
 """Darkhole.
 This repository currently focuses on providing cryptographic foundations under
 :mod:`darkhole.crypto` and packet layer encoding/decoding under :mod:`darkhole.packet`.

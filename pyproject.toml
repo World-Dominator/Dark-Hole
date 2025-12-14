@@ -1,3 +1,12 @@
+[project]
+name = "darkhole"
+version = "0.0.0"
+description = "Darkhole research prototype"
+requires-python = ">=3.10"
+dependencies = ["cryptography>=41"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
 [build-system]
 requires = ["setuptools>=68", "wheel"]
 requires = ["setuptools>=64", "wheel"]
