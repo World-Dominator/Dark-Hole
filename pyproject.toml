@@ -7,3 +7,165 @@ dependencies = ["cryptography>=41"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "darkhole"
+version = "0.0.0"
+description = "Darkhole cryptographic foundation"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [{name = "darkhole"}]
+dependencies = [
+    "cryptography>=41.0.0",
+  "cryptography>=41.0.0",
+version = "0.1.0"
+description = "A secure, decentralized networking framework"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    {name = "Darkhole Team", email = "team@darkhole.dev"}
+]
+maintainers = [
+    {name = "Darkhole Team", email = "team@darkhole.dev"}
+]
+keywords = ["security", "networking", "p2p", "cryptography", "dht"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Security",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: System :: Networking",
+]
+requires-python = ">=3.9"
+dependencies = [
+    "cryptography>=41.0.0",
+    "pynacl>=1.5.0",
+    "numpy>=1.24.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "hypothesis>=6.0.0",
+  "pytest>=7.0.0",
+  "hypothesis>=6.0.0",
+]
+
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["tests"]
+
+[tool.setuptools]
+packages = ["darkhole", "darkhole.packet"]
+packages = ["darkhole", "darkhole.crypto"]
+    "pytest>=7.4.0",
+    "hypothesis>=6.82.0",
+    "mypy>=1.5.0",
+    "ruff>=0.1.0",
+    "pytest-cov>=4.1.0",
+    "pytest-xdist>=3.3.0",
+]
+test = [
+    "pytest>=7.4.0",
+    "hypothesis>=6.82.0",
+    "pytest-cov>=4.1.0",
+    "pytest-xdist>=3.3.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/darkhole/darkhole"
+Documentation = "https://darkhole.readthedocs.io/"
+Repository = "https://github.com/darkhole/darkhole.git"
+"Bug Tracker" = "https://github.com/darkhole/darkhole/issues"
+
+[tool.setuptools.packages.find]
+where = ["darkhole"]
+include = ["darkhole*"]
+exclude = ["tests*", "examples*", "docs*", "paper*"]
+
+[tool.ruff]
+select = ["E", "F", "W", "UP", "N", "I", "YTT", "ANN", "S", "BLE", "FBT", "B", "A", "COM", "C4", "DTZ", "T10", "EM", "EXE", "ISC", "ICN", "G", "INP", "PIE", "T20", "PYI", "PT", "Q", "RSE", "RET", "SLF", "SIM", "TID", "TCH", "ARG", "PTH", "ERA", "PGH", "PL", "TRY", "FLY", "NPY", "PERF", "RUF"]
+ignore = ["ANN101", "ANN102", "S101", "S104"]
+line-length = 88
+target-version = "py39"
+
+[tool.ruff.per-file-ignores]
+"__init__.py" = ["F401"]
+"tests/**/*" = ["S101", "S102", "ANN", "PLR2004"]
+"examples/**/*" = ["S101", "PLR2004"]
+
+[tool.mypy]
+python_version = "3.9"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+check_untyped_defs = true
+disallow_untyped_decorators = true
+no_implicit_optional = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+warn_no_return = true
+warn_unreachable = true
+strict_equality = true
+
+[[tool.mypy.overrides]]
+module = ["cryptography.*", "nacl.*", "numpy.*"]
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+minversion = "7.0"
+addopts = "-ra -q --strict-markers --strict-config"
+testpaths = ["tests"]
+filterwarnings = [
+    "error",
+    "ignore::UserWarning",
+    "ignore::DeprecationWarning",
+]
+markers = [
+    "slow: marks tests as slow (deselect with '-m \"not slow\"')",
+    "integration: marks tests as integration tests",
+    "unit: marks tests as unit tests",
+]
+
+[tool.coverage.run]
+source = ["darkhole"]
+branch = true
+omit = [
+    "*/tests/*",
+    "*/examples/*",
+    "*/docs/*",
+    "*/paper/*",
+    "*/__init__.py",
+    "*/conftest.py",
+]
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "def __repr__",
+    "if self.debug:",
+    "if settings.DEBUG",
+    "raise AssertionError",
+    "raise NotImplementedError",
+    "if 0:",
+    "if __name__ == .__main__.:",
+    "class .*\\bProtocol\\):",
+    "@(abc\\.)?abstractmethod",
+]
+show_missing = true
+precision = 2
+fail_under = 80
+
+[tool.coverage.html]
+directory = "htmlcov"
