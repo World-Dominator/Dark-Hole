@@ -1,3 +1,6 @@
+# darkhole
+
+Cryptographic foundation primitives and protocols.
 # Darkhole
 
 A secure, decentralized networking framework built for privacy and performance.

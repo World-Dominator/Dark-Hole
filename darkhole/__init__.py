@@ -1,3 +1,12 @@
+"""Darkhole.
+
+This repository currently focuses on providing cryptographic foundations under
+:mod:`darkhole.crypto`.
+"""
+
+from __future__ import annotations
+
+__all__ = ["crypto"]
 """Darkhole: A secure, decentralized networking framework."""
 
 __version__ = "0.1.0"
