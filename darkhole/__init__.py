@@ -1,5 +1,9 @@
 """Darkhole.
 
+This repository contains cryptographic and packet-format primitives.
+"""
+
+__all__ = ["crypto"]
 This repository currently focuses on providing cryptographic foundations under
 :mod:`darkhole.crypto`.
 """

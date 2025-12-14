@@ -1,3 +1,6 @@
+"""Cryptographic primitives for Darkhole."""
+
+__all__ = ["packet_layer", "reputation", "sphinx"]
 """Core cryptographic primitives and protocols.
 
 Modules in this package intentionally provide *thin* wrappers around vetted
